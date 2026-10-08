@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ops - Other People's Sculpture</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        /* Ensuring no absolute black or white is used */
+        :root {
+            --cream-bg: #fcfbf8;
+            --soft-dark: #2b2b2a;
+        }
+
+        body {
+            background-color: var(--cream-bg);
+            color: var(--soft-dark);
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        /* Slow, chill fade-in animation on load */
+        @keyframes chillFadeIn {
+            0% { 
+                opacity: 0; 
+                transform: translateY(15px); 
+            }
+            100% { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+
+        /* Subtle slow pulse animation for the status text */
+        @keyframes chillPulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.35; }
+        }
+
+        .animate-fade-in {
+            opacity: 0; /* Starts hidden before animation kicks in */
+            animation: chillFadeIn 2.5s ease-out forwards;
+        }
+
+        .animate-pulse-slow {
+            animation: chillPulse 4.5s ease-in-out infinite;
+        }
+
+        /* Staggered delays for a sequential reveal effect */
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-600 { animation-delay: 0.6s; }
+        .delay-1000 { animation-delay: 1.0s; }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col items-center justify-center p-6 selection:bg-[#2b2b2a] selection:text-[#fcfbf8]">
+    
+    <main class="max-w-4xl w-full text-center space-y-20">
+        
+        <!-- Header Section -->
+        <header class="space-y-6 animate-fade-in delay-200">
+            <h1 class="text-6xl md:text-7xl font-extralight tracking-[0.2em] lowercase">ops</h1>
+            <h2 class="text-xl md:text-2xl font-light tracking-widest">Other People's Sculpture</h2>
+        </header>
+        
+        <!-- Under Construction Status -->
+        <div class="animate-fade-in delay-600">
+            <p class="text-sm md:text-base tracking-[0.3em] uppercase animate-pulse-slow font-light">
+                Site under construction
+            </p>
+            <div class="h-[1px] w-16 bg-[#2b2b2a]/20 mx-auto mt-8"></div>
+        </div>
+
+        <!-- Contact Information Section -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-8 text-sm md:text-base font-light leading-loose animate-fade-in delay-1000">
+            
+            <!-- Office Address -->
+            <div class="flex flex-col items-center space-y-1">
+                <h3 class="font-medium tracking-widest uppercase text-xs mb-4 text-[#2b2b2a]/50">Office Address</h3>
+                <p>Old Hall Farm</p>
+                <p>Kerdiston</p>
+                <p>Norfolk</p>
+                <p>Nr10 4RY</p>
+                <div class="pt-5 flex flex-col space-y-2 items-center">
+                    <a href="mailto:katy@otherpeoplessculpture.co.uk" class="hover:opacity-50 transition-opacity duration-300">katy@otherpeoplessculpture.co.uk</a>
+                    <a href="tel:01603871750" class="hover:opacity-50 transition-opacity duration-300">01603 871750</a>
+                </div>
+            </div>
+
+            <!-- Delivery Address -->
+            <div class="flex flex-col items-center space-y-1">
+                <h3 class="font-medium tracking-widest uppercase text-xs mb-4 text-[#2b2b2a]/50">Delivery Address</h3>
+                <p>Unit 1 B Prout Rd</p>
+                <p>London</p>
+                <p>E5 9NP</p>
+                <p class="hidden md:block">&nbsp;</p> <!-- Alignment spacer for desktop -->
+                <div class="pt-5 flex flex-col space-y-2 items-center">
+                    <a href="mailto:phil@otherpeoplessculpture.co.uk" class="hover:opacity-50 transition-opacity duration-300">phil@otherpeoplessculpture.co.uk</a>
+                    <a href="tel:07976396516" class="hover:opacity-50 transition-opacity duration-300">07976396516</a>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+</body>
+</html>
